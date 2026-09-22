@@ -4,7 +4,7 @@
 # Env: GH_REPO="owner/zcode-rust" (default below), PREFIX=~/.zcode/rust-bin
 set -eu
 
-GH_REPO="${GH_REPO:-OWNER_PLACEHOLDER/zcode-rust}"
+GH_REPO="${GH_REPO:-Solorush2021/zcode-rust}"
 PREFIX="${PREFIX:-$HOME/.zcode/rust-bin}"
 VER="0.16.9"
 
