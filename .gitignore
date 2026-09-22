@@ -1,0 +1,17 @@
+ZCode/
+.cargo/
+.rustup/
+.npm-global/
+.npm-cache/
+.pnpm-store/
+.cache/
+.tools/
+zcode-rs/target/
+zcode-rs/dist/
+zcode-rs/release/
+zcode-rs/dist-rs/
+*.tar.gz
+*.zip
+.node-compile-cache/
+node_modules/
+bench/golden-args6/bin/

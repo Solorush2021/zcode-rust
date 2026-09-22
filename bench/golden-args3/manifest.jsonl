@@ -1,0 +1,13 @@
+{"name":"scase001","argv":["__internal-search"],"mode":"check","cwd":"/Users/vipulkumar/Documents/zai/zcode-port/ZCode/apps/zcode-cli/packages/cli/src"}
+{"name":"scase002","argv":["__internal-search","bogus"],"mode":"check","cwd":"/Users/vipulkumar/Documents/zai/zcode-port/ZCode/apps/zcode-cli/packages/cli/src"}
+{"name":"scase003","argv":["__internal-search","grep","--version"],"mode":"check","cwd":"/Users/vipulkumar/Documents/zai/zcode-port/ZCode/apps/zcode-cli/packages/cli/src"}
+{"name":"scase004","argv":["__internal-search","find",".","-maxdepth","1","-name","help.ts"],"mode":"check","cwd":"/Users/vipulkumar/Documents/zai/zcode-port/ZCode/apps/zcode-cli/packages/cli/src"}
+{"name":"scase005","argv":["__internal-search","grep","-c","parseArgs","arguments.ts"],"mode":"check","cwd":"/Users/vipulkumar/Documents/zai/zcode-port/ZCode/apps/zcode-cli/packages/cli/src"}
+{"name":"scase006","argv":["__internal-search","grep","-n","parseArgs","arguments.ts"],"mode":"check","cwd":"/Users/vipulkumar/Documents/zai/zcode-port/ZCode/apps/zcode-cli/packages/cli/src"}
+{"name":"scase007","argv":["__internal-search","grep","-rln","runDoctor","--include=*.ts","."],"mode":"check","cwd":"/Users/vipulkumar/Documents/zai/zcode-port/ZCode/apps/zcode-cli/packages/cli/src"}
+{"name":"scase008","argv":["__internal-search","grep","-Z","-n","parseArgs","arguments.ts"],"mode":"check","cwd":"/Users/vipulkumar/Documents/zai/zcode-port/ZCode/apps/zcode-cli/packages/cli/src"}
+{"name":"scase009","argv":["__internal-search","grep","--null","-n","parseArgs","arguments.ts"],"mode":"check","cwd":"/Users/vipulkumar/Documents/zai/zcode-port/ZCode/apps/zcode-cli/packages/cli/src"}
+{"name":"scase010","argv":["__internal-search","grep","-rln","zzz-no-such-token-zzz","--include=*.ts","."],"mode":"check","cwd":"/Users/vipulkumar/Documents/zai/zcode-port/ZCode/apps/zcode-cli/packages/cli/src"}
+{"name":"scase011","argv":["__internal-search","grep","-n","--config","x","parseArgs","arguments.ts"],"mode":"check","cwd":"/Users/vipulkumar/Documents/zai/zcode-port/ZCode/apps/zcode-cli/packages/cli/src"}
+{"name":"scase012","argv":["__internal-search","find",".","-name","nosuchfile.xyz"],"mode":"check","cwd":"/Users/vipulkumar/Documents/zai/zcode-port/ZCode/apps/zcode-cli/packages/cli/src"}
+{"name":"scase013","argv":["__internal-search","grep"],"mode":"check","cwd":"/Users/vipulkumar/Documents/zai/zcode-port/ZCode/apps/zcode-cli/packages/cli/src"}

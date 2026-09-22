@@ -1,0 +1,40 @@
+[
+  {
+    "commandRootCount": 0,
+    "dataPath": "/Users/vipulkumar/.zcode/cli/plugins/data/node-repl-host@zcode-plugins-official",
+    "enabled": true,
+    "id": "node-repl-host@zcode-plugins-official",
+    "manifestPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/node-repl-host/0.6.0/.zcode-plugin/plugin.json",
+    "marketplace": "zcode-plugins-official",
+    "declaredMcpServerNames": [],
+    "mcpServerNames": [],
+    "hookDetails": [],
+    "name": "node-repl-host",
+    "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/node-repl-host/0.6.0",
+    "skillCount": 0,
+    "skillRootCount": 0,
+    "source": "official",
+    "diagnostics": [],
+    "description": "Shared node_repl runtime host for ZCode official capabilities. Not user-facing: it carries no skill and appears in no marketplace listing; Browser Use and Computer Use enable it and contribute their own skills, docs and runtime assets.",
+    "version": "0.6.0"
+  },
+  {
+    "commandRootCount": 0,
+    "dataPath": "/Users/vipulkumar/.zcode/cli/plugins/data/browser-use@zcode-plugins-official",
+    "enabled": true,
+    "id": "browser-use@zcode-plugins-official",
+    "manifestPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/browser-use/0.5.1/.zcode-plugin/plugin.json",
+    "marketplace": "zcode-plugins-official",
+    "declaredMcpServerNames": [],
+    "mcpServerNames": [],
+    "hookDetails": [],
+    "name": "browser-use",
+    "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/browser-use/0.5.1",
+    "skillCount": 2,
+    "skillRootCount": 1,
+    "source": "official",
+    "diagnostics": [],
+    "description": "Built-in browser automation runtime and guidance for Desktop IAB and explicitly enabled CLI-managed headless CDP: open, navigate, inspect, click, type, screenshot, record workspace WebM videos, and verify web pages and local dev targets.",
+    "version": "0.5.1"
+  }
+]

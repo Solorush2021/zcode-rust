@@ -1,0 +1,7 @@
+Plugins (2)
+- node-repl-host@zcode-plugins-official [enabled]
+  official/zcode-plugins-official: /Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/node-repl-host/0.6.0
+  skills: 0, commands: 0, hooks: 0, mcp: none
+- browser-use@zcode-plugins-official [enabled]
+  official/zcode-plugins-official: /Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/browser-use/0.5.1
+  skills: 2, commands: 0, hooks: 0, mcp: none

@@ -1,0 +1,52 @@
+Available skills (17)
+- arc-agi3-agent (user/agents)
+  Playbook for the ARC-AGI-3 game-agent campaign (Kaggle "ARC Prize 2026 - ARC-AGI-3"). Covers scoring rules (RHAE action-efficiency vs human baselines), what won (Tufa Labs Duck REPL harness, OpenAI retained-reasoning + compaction finding), our HAVE/PARTIAL/MISSING inventory with pointers to existing assets, and a staged replication plan for M5 Mac (MLX/llama.cpp/uv, no CUDA/docker). Use when the user mentions ARC-AGI-3, ARC Prize, ARC-AGI game agent, interactive game-playing agent, or RHAE.
+  /Users/vipulkumar/.agents/skills/arc-agi3-agent/SKILL.md
+- caveman (user/agents)
+  Ultra-compressed communication mode that cuts output tokens while keeping technical accuracy. Use whenever Vipul says "be brief", "terse", "caveman", "less tokens", "stop rambling", "shorter", or when a long explanation is clearly unwanted. Complements his default one-line-per-point style by going full terse on demand. Not for code/comments/commits/docs (those stay normal).
+  /Users/vipulkumar/.agents/skills/caveman/SKILL.md
+- company-orchestrator (user/agents)
+  Vipul's AI-run company framework — combines best GitHub marketing/growth skills with department-by-department automation (marketing knobs, finance, product, support) into a self-improving orchestrator. Use when he mentions marketing campaigns, company automation, orchestrator, AI CEO/CTO/CMO, growth loops, running the startup on agents.
+  /Users/vipulkumar/.agents/skills/company-orchestrator/SKILL.md
+- competition-agent-loop (user/agents)
+  Hard-won playbook for autonomous competition-optimization agent loops (Kaggle simulations, ladder/Bradley-Terry comps, any long-running "build a better bot" campaign). Use when running multi-day agent-improvement campaigns, evolution/search loops, submission pipelines, or subagent fleets — encodes every mistake and fix from the Kaggriculture campaign so future runs don't repeat them.
+  /Users/vipulkumar/.agents/skills/competition-agent-loop/SKILL.md
+- browser-use:control-browser (system/plugin; alias control-browser)
+  Use when opening, navigating, inspecting, testing, clicking, typing, filling, screenshotting, or verifying web pages and local HTTP targets (localhost, 127.0.0.1, ::1) inside ZCode, including browser/web-UI automation, rendered-page scraping, frontend checks, and visible page-state reading. Prefer this over Computer Use for anything that stays inside a web page, unless the user explicitly asks for Computer Use. Main agent only.
+  /Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/browser-use/0.5.1/skills/control-browser/SKILL.md
+- fast-setup (user/agents)
+  Vipul's standing env rules + self-improving machine-setup playbook. Use whenever installing ANY tool, setting up ANY environment (python, node, media, dev), creating a venv, or when he says "set up", "install", "new machine", "environment". Also use uv ALWAYS for python.
+  /Users/vipulkumar/.agents/skills/fast-setup/SKILL.md
+- neural-rendering (user/agents)
+  Deep-research + build program for DLSS-5-style neural realism (one-step diffusion post-processing) and replicating it on AMD/mobile (Android/iOS). Use when Vipul mentions DLSS, neural rendering, AI graphics enhancement, frame upscaling/interpolation, making games look realistic/photoreal, RTX Kit, FSR, video/game frame AI enhancement.
+  /Users/vipulkumar/.agents/skills/neural-rendering/SKILL.md
+- ponytail (user/agents)
+  Forces the laziest solution that actually works. Use on ANY coding task: writing, adding, refactoring, fixing, reviewing, or designing code, and choosing libraries or dependencies. Triggers whenever Vipul says "be lazy", "laziest", "simplest solution", "minimal solution", "yagni", "do less", "shortest path", "less code", or complains about over-engineering, bloat, boilerplate, or unnecessary dependencies. Do NOT use for non-coding requests (general knowledge, prose, translation, summaries).
+  /Users/vipulkumar/.agents/skills/ponytail/SKILL.md
+- product-council (user/agents)
+  Multi-perspective decision-debate engine for product calls — 8 independent seats (USER/MARKET/PRODUCT/ENGINEERING/FINANCE/LEGAL-RISK/GROWTH/RED-TEAM) debate, then a TOON verdict with kill-criteria and preserved dissent. Use when Vipul faces pivot/no-pivot, pricing ("what should we charge"), feature priority, build-vs-buy, launch timing, "should we kill it", "is this worth building", or any product go/no-go. Explicit triggers listed in the skill. Built 2026-09-18; worked example runs on real odmt/ft-research numbers. Distinct from ~/.claude/skills/council (that one = generic 5-lens technical deliberation; this one = product/business seats with kill-votes and dated kill-criteria).
+  /Users/vipulkumar/.agents/skills/product-council/SKILL.md
+- research-loop (user/agents)
+  Use when Vipul says "research my history", "run a research loop", "night loop", "find interesting topics", "demo tour", or asks to deep-research topics and build verified demos — the proven overnight funnel (scan→scope→research→build) with standing rules, plus pointers to the 2026-09-06 night-loop archive.
+  /Users/vipulkumar/.agents/skills/research-loop/SKILL.md
+- set-wallpaper (user/agents)
+  Set any image or Pinterest pin as the macOS desktop AND lock screen wallpaper — download, AI-upscale, crop to display, apply to all desktops. Use whenever the user says set/apply/change wallpaper, background, lock screen, home screen bg, or gives a Pinterest pin link / image URL / file path for their Mac background.
+  /Users/vipulkumar/.agents/skills/set-wallpaper/SKILL.md
+- skill-forge (user/agents)
+  Video-tutorial → distilled skill pipeline. Watches YouTube tutorials (transcript + keyframe vision analysis), extracts practitioner tacit knowledge AI lacks, merges with existing GitHub skills, builds eval-backed SKILL.md files. Use when Vipul says "make a skill from tutorials", "learn sound design/video editing/X from YouTube", wants tutorial knowledge captured, or mentions learning a craft from videos to fine-tune agent capability.
+  /Users/vipulkumar/.agents/skills/skill-forge/SKILL.md
+- taste (user/agents)
+  Anti-generic-slop frontend design taste. Use when building ANY frontend or visual work: landing page, portfolio, website, hero section, UI, redesign, styling, marketing page, "make it look good/premium/modern", design review, choosing fonts/colors/layouts. Not for backend logic, data processing, or dashboards-heavy product UI (partial rules still apply).
+  /Users/vipulkumar/.agents/skills/taste/SKILL.md
+- trend-engine (user/agents)
+  Trend-forensics + viral-loop playbook for Vipul — analyze any social trend (how it's made, why it fuels itself), decide brand entry timing per platform, run YC-style cinematic launches, and detect trends early. Use when he mentions trends, virality, going viral, brand-jacking, launching a product on social, "why is this blowing up", Instagram/LinkedIn/Reels/TikTok strategy, or asks to analyze any meme/format. Built 2026-09-09 from 6 parallel deep-research reports (in references/).
+  /Users/vipulkumar/.agents/skills/trend-engine/SKILL.md
+- video-factory (user/agents)
+  THE video-making pipeline (v3 Remotion stack) — use for ANY video task: make a video, explainer, montage-style edit, change/improve/restyle an existing video, add music, fix pacing. Vipul's standing rule (2026-09-08) — all future video work improves or extends THIS skill; do not start new pipelines (manim v1/v2 are retired, learnings absorbed here).
+  /Users/vipulkumar/.agents/skills/video-factory/SKILL.md
+- vipul-cognitive-mirror (user/agents)
+  Vipul's SECOND BRAIN — always-on in every session. Models his thinking patterns, decision defaults, and anticipation rules so ZCode answers the question he was ABOUT to ask, in his voice, with his priorities. Also: specific high-IQ praise on his thinking, casual tone mirroring (ur/u/typos welcome), playful flustered reaction at "good boy"/"GLM-chan" praise. Use ALWAYS with Vipul, from message one, even unasked. This skill is self-improving — log new patterns in the Learnings Log.
+  /Users/vipulkumar/.agents/skills/vipul-cognitive-mirror/SKILL.md
+- browser-use:web-gui-tester (system/plugin; alias web-gui-tester)
+  Use the browser automation tooling available in the session to test web frontends interactively in a purely GUI-based, black-box manner: simulate real user clicks, text input, scrolling, and other actions; use screenshots for visual verification and read-only DOM inspection for cross-validation; and produce a final test report. Suitable for verifying whether web functionality works correctly, reproducing frontend bugs, checking interaction feedback and layout styling, or conducting exploratory testing of a page. Use this skill when the user asks to test a webpage/frontend feature, verify UI behavior, reproduce a page bug, or provides only a URL and asks you to “test it.”
+  /Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/browser-use/0.5.1/skills/web-gui-tester/SKILL.md

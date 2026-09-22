@@ -1,0 +1,67 @@
+Plugins (22)
+- node-repl-host@zcode-plugins-official [enabled]
+  official/zcode-plugins-official: /Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/node-repl-host/0.6.0
+  skills: 0, commands: 0, hooks: 0, mcp: none
+- browser-use@zcode-plugins-official [enabled]
+  official/zcode-plugins-official: /Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/browser-use/0.5.1
+  skills: 2, commands: 0, hooks: 0, mcp: none
+- video2code@zcode-plugins-official [enabled]
+  cache/zcode-plugins-official: /Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video2code/0.6.0
+  skills: 6, commands: 1, hooks: 5, mcp: plugin:video2code:runtime, plugin:video2code:video
+- video-agent-kit@zcode-plugins-official [enabled]
+  cache/zcode-plugins-official: /Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video-agent-kit/0.4.3
+  skills: 5, commands: 1, hooks: 3, mcp: plugin:video-agent-kit:video-edit
+- write-research@zcode-plugins-official [disabled]
+  cache/zcode-plugins-official: /Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/write-research/0.1.1
+  skills: 0, commands: 0, hooks: 0, mcp: none
+- read-macro@zcode-plugins-official [disabled]
+  cache/zcode-plugins-official: /Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/read-macro/0.1.1
+  skills: 0, commands: 0, hooks: 0, mcp: none
+- vet-companies@zcode-plugins-official [disabled]
+  cache/zcode-plugins-official: /Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/vet-companies/0.1.2
+  skills: 0, commands: 0, hooks: 0, mcp: none
+- model-deals@zcode-plugins-official [disabled]
+  cache/zcode-plugins-official: /Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/model-deals/0.1.1
+  skills: 0, commands: 0, hooks: 0, mcp: none
+- watch-positions@zcode-plugins-official [disabled]
+  cache/zcode-plugins-official: /Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/watch-positions/0.1.1
+  skills: 0, commands: 0, hooks: 0, mcp: none
+- pick-funds@zcode-plugins-official [disabled]
+  cache/zcode-plugins-official: /Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/pick-funds/0.1.1
+  skills: 0, commands: 0, hooks: 0, mcp: none
+- assess-credit@zcode-plugins-official [disabled]
+  cache/zcode-plugins-official: /Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/assess-credit/0.1.2
+  skills: 0, commands: 0, hooks: 0, mcp: none
+- run-fpa@zcode-plugins-official [disabled]
+  cache/zcode-plugins-official: /Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/run-fpa/0.1.1
+  skills: 0, commands: 0, hooks: 0, mcp: none
+- accounting-and-reporting@zcode-plugins-official [disabled]
+  cache/zcode-plugins-official: /Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/accounting-and-reporting/0.1.1
+  skills: 0, commands: 0, hooks: 0, mcp: none
+- find-clients@zcode-plugins-official [disabled]
+  cache/zcode-plugins-official: /Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/find-clients/0.1.2
+  skills: 0, commands: 0, hooks: 0, mcp: none
+- finance-search@zcode-plugins-official [disabled]
+  cache/zcode-plugins-official: /Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/finance-search/0.1.0
+  skills: 0, commands: 0, hooks: 0, mcp: none
+- wind@zcode-plugins-official [disabled]
+  cache/zcode-plugins-official: /Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/wind/0.1.0
+  skills: 0, commands: 0, hooks: 0, mcp: none
+- hexin@zcode-plugins-official [disabled]
+  cache/zcode-plugins-official: /Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/hexin/0.1.0
+  skills: 0, commands: 0, hooks: 0, mcp: none
+- tianyancha@zcode-plugins-official [disabled]
+  cache/zcode-plugins-official: /Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/tianyancha/0.1.0
+  skills: 0, commands: 0, hooks: 0, mcp: none
+- github@zcode-plugins-official [disabled]
+  cache/zcode-plugins-official: /Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/github/0.1.2
+  skills: 0, commands: 0, hooks: 0, mcp: none
+- gitlab@zcode-plugins-official [disabled]
+  cache/zcode-plugins-official: /Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/gitlab/0.1.3
+  skills: 0, commands: 0, hooks: 0, mcp: none
+- obsidian@zcode-plugins-official [disabled]
+  cache/zcode-plugins-official: /Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/obsidian/0.1.2
+  skills: 0, commands: 0, hooks: 0, mcp: none
+- mimosa@zcode-plugins-official [disabled]
+  cache/zcode-plugins-official: /Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/mimosa/1.0.3
+  skills: 0, commands: 0, hooks: 7, mcp: none

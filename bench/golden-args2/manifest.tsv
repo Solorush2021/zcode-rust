@@ -1,0 +1,37 @@
+xcase001	--target=x--version	check
+xcase002	--target=	check
+xcase003	--output-format=json--version	check
+xcase004	--browser-use=headless--version	check
+xcase005	--locale=zh-CN--version	check
+xcase006	--cwd=--version	check
+xcase007	-vh	check
+xcase008	-hv	check
+xcase009	-c	check
+xcase010	-f	check
+xcase011	-cf--version	check
+xcase012	-fa--version	check
+xcase013	-h=true	check
+xcase014	--verbose=x	check
+xcase015	--no-color=1	check
+xcase016	--héllo	check
+xcase017	-é	check
+xcase018	---h	check
+xcase019	----help	check
+xcase020	help--json	check
+xcase021	version--json	check
+xcase022	--helpextra	check
+xcase023	doctor--jsonextra	check
+xcase024	--json	check
+xcase025	--verbose	check
+xcase026	--attach=	check
+xcase027	--sparse=	check
+xcase028	-p	check
+xcase029	--prompt=	check
+xcase030	--	check
+xcase031	---	check
+xcase032	-,	check
+xcase033	--mode=BUILD--version	check
+xcase034	--mode=Yolo--version	check
+xcase035	--browser-use=HEADLESS--version	check
+xcase036	--surface=DESKTOP--version	check
+xcase037	--output-format=JSON--version	check

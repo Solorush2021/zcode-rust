@@ -1,0 +1,16 @@
+Custom commands (5)
+- /env-check [--fix]
+  体检本机环境并装齐缺失依赖 — Python 视频包/ffmpeg/Node/registry 连通性；浏览器录制由 ZCode 内置 Browser Use 提供
+  user/plugin: /Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video2code/0.6.0/commands/env-check.md
+- /record <url> [输出名]
+  用 ZCode 内置 Browser Use WebView 把网站 URL 的动效录成 WebM 再用 ffmpeg 转 MP4 — 踩点→编排动作→录制→转码→审片
+  user/plugin: /Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video2code/0.6.0/commands/record.md
+- /replicate <视频路径（mp4/webm 等）或网站 URL> [素材清单 catalog.json 路径]
+  复刻一段网页录屏 — 观察→切片→计划→构建→录像对照验证, 产出 out/plan.md、out/verify.jsonl、out/report.md 三件套
+  user/plugin: /Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video2code/0.6.0/commands/replicate.md
+- /replicate-fullstack <视频路径（mp4/webm 等）或网站 URL> [素材清单 catalog.json 路径]
+  全栈复刻一段操作录屏 — 观察(含后端行为)→切片→计划(含 Backend design)→构建(前端 web-replicate 脚手架 + Express/sqlite 后端)→录像+curl 双叉验证, 产出 out/plan.md、out/verify.jsonl、out/report.md 三件套
+  user/plugin: /Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video2code/0.6.0/commands/replicate-fullstack.md
+- /video-edit [任务说明]
+  使用 video-agent-kit 完成视频剪辑任务
+  user/plugin: /Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video-agent-kit/0.4.3/commands/video-edit.md

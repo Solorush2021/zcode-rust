@@ -1,0 +1,20 @@
+{
+  "cli": {
+    "name": "zcode",
+    "processName": "zcode-cli",
+    "version": "0.16.9"
+  },
+  "runtime": {
+    "arch": "arm64",
+    "cwd": "/Users/vipulkumar/Documents/zai/zcode-port/ZCode",
+    "execPath": "/opt/homebrew/Cellar/node/26.8.1/bin/node",
+    "node": "v26.8.1",
+    "platform": "darwin",
+    "processTitle": "zcode-cli",
+    "sea": false
+  },
+  "packaging": {
+    "default": "node-bundle",
+    "sea": "optional"
+  }
+}

@@ -1,0 +1,170 @@
+Skill: arc-agi3-agent
+scope/source: user/agents
+path: /Users/vipulkumar/.agents/skills/arc-agi3-agent/SKILL.md
+directory: /Users/vipulkumar/.agents/skills/arc-agi3-agent
+description: Playbook for the ARC-AGI-3 game-agent campaign (Kaggle "ARC Prize 2026 - ARC-AGI-3"). Covers scoring rules (RHAE action-efficiency vs human baselines), what won (Tufa Labs Duck REPL harness, OpenAI retained-reasoning + compaction finding), our HAVE/PARTIAL/MISSING inventory with pointers to existing assets, and a staged replication plan for M5 Mac (MLX/llama.cpp/uv, no CUDA/docker). Use when the user mentions ARC-AGI-3, ARC Prize, ARC-AGI game agent, interactive game-playing agent, or RHAE.
+safeToAutoLoad: yes
+size: 14053/14053 bytes
+
+Content
+# ARC-AGI-3 Game Agent — campaign playbook
+
+Read this before building anything for the Kaggle ARC Prize 2026 (ARC-AGI-3) competition.
+Companion playbook: `~/.agents/skills/competition-agent-loop/SKILL.md` (campaign discipline —
+kill gates, ledgers, seed rules, submission economy — applies verbatim; this file adds the
+game-agent specifics). Facts below verified 2026-09-07 against the sources in §6.
+
+## 1. The competition + scoring rules
+
+- **Task:** agents play unseen 2D puzzle games through a generic harness. Observations are
+  text renderings of 64x64 grids (ASCII), no rules or goals given — the agent gets the action
+  list and must infer everything by interacting. Loop shape: `observe → choose_action →
+  observation ... until level done` (`is_done`). 25 game environments; the public set is
+  183 levels (playable at arcprize.org/tasks).
+- **Scoring = RHAE (Relative Human Action Efficiency).** Human baselines were set by
+  in-person testing per game. 100% = beat every game while using no more actions than the
+  human baseline. Per level you only get credit if you WIN it, and the efficiency term is
+  capped, so wasted actions burn score but extra efficiency doesn't over-reward. Average
+  human tester scores ~48% (OpenAI's estimate from official logs). Exact per-game formula:
+  confirm in docs.arcprize.org before building the local scorer.
+- **Money ($850K total):** $700K Grand Prize for the FIRST agent to score 100% (carries over
+  if unclaimed); $75K Top Score Award (guaranteed, 1st=$40K); $75K milestone prizes
+  ($25K/$10K/$2.5K each) that REQUIRE open-sourcing. Milestone #1 (June 30 2026) was won by
+  Tufa Labs. **Milestone #2 closes Sept 30 2026** — open-source deadline, three weeks out
+  from this writing.
+- **Eval constraints:** submissions via Kaggle, **no internet during evaluation**, hardware
+  limits announced at launch, all code/methods must be open-sourced for prizes. Local
+  public-game scores are a KNOWN-unreliable predictor of leaderboard rank (3rd-place winner's
+  explicit warning) — tune on public games, gate on held-out behavior diversity, not just
+  local RHAE.
+
+## 2. Key facts from top approaches (what actually worked)
+
+- **Tufa Labs "The Duck" (Milestone #1 winner)** — Qwen 3.6 27B FP8 run locally, the only
+  winner using agent-writes-code. Treats each game as an interactive coding problem: game
+  state becomes Python variables, the model loops reason → write helper functions → execute
+  in a live REPL → emit actions → read observation. Perception: rendered image + raw ASCII
+  grid + a segmentation tool for zooming into regions; the agent picks per moment. Context
+  management: "infinite play via eviction" — continuously pop the oldest messages, keep
+  system prompt + recent history. Philosophy: keep the harness lightweight/generic and let
+  the model drive; **hand-crafted tools actually hurt**; gains came from multimodality and
+  better base models. Lineage: successor to "Stochastic Goose" (ARC-AGI-3 preview winner).
+  Write-up: Kaggle discussion 717133.
+- **OpenAI (blog 2026-09-03): two settings tripled scores.** GPT-5.6 Sol on the official
+  harness: 13.3% on public set; with (a) **retained reasoning** (private reasoning carried
+  across turns instead of discarded after every action) and (b) **compaction** (summarize the
+  conversation when too long) instead of the official harness's rolling truncation at 175K
+  chars: **38.3% — ~3x score with ~6x fewer output tokens**. Two failure modes of the
+  official harness: reasoning discarded each action (model re-learns the game every turn) and
+  old actions falling out of a truncation window (loses memory of what it did). Lesson for
+  ANY model+handroll harness: persist a reasoning/scratchpad channel across turns and compact
+  (summarize) rather than hard-truncate.
+- **2nd place "Reki":** vision-LLM-as-policy — recent frames rendered as labeled images into
+  Gemma-4-31B locally, one JSON object per step (what changed, short plan, 1-4 actions);
+  reflection memory refreshed ~every 10 steps; CPU-only numpy click heuristic favoring small,
+  rare-colored, button-like shapes; "dead-signature" mechanism stops clicking object types
+  that never change anything. Simple beats complex.
+- **3rd place "forge":** same look-at-board/return-JSON with Gemma-4-31B, wrapped in a
+  candidate-generator + arbiter framework — its best run **turned the machinery off**.
+- **NVIDIA AVO (arXiv 2603.24517):** 100% RHAE on the PUBLIC set (all 183 levels) in 6,624
+  actions (~36 actions/level — the efficiency bar) with Claude Opus 5, using persistent
+  memory + execution loop + stagnation-supervisor. Public set only — withheld sets unsolved.
+  Not a Kaggle submission, but it defines the action-efficiency frontier and proves the
+  observation format is sufficient.
+- **Mostik AI** claims an undisclosed model topping the ARC-AGI-3 leaderboard —
+  self-reported, unverifiable, ignore for design decisions (`research/topics/mostik_latent_bridge.md`).
+
+**Synthesis:** you do NOT need RL or world models to place. You need (1) a small capable LLM
+in a tight loop, (2) game-as-programming-task framing with a REPL, (3) aggressive context
+discipline (eviction or compaction + a persistent scratchpad), (4) simple exploration
+heuristics (systematic sweep, dead-signature stop, rare-color clicks), (5) action frugality.
+Bespoke tooling beyond that has negative expected value at every placing so far.
+
+## 3. Our inventory — HAVE / PARTIAL / MISSING
+
+| # | Capability needed | Status | Where it lives |
+|---|---|---|---|
+| 1 | Campaign discipline: gates, ledgers, submission economy, falsified-list, subagent briefs | **HAVE** | `~/.agents/skills/competition-agent-loop/SKILL.md` (copies in sync) |
+| 2 | Harness patterns: journal, checkpoint-resume, stall supervisor, commit-on-improvement, memory-write policy, context hygiene | **HAVE** (patterns, not game-loop code) | `research/topics/harness_engineering.md` §4, `research/topics/avo_kernel_evolution.md` §4 |
+| 3 | Small-model inference on 16GB M5: MLX + llama.cpp verified; ternary 27B 2-bit fits @5.3 tok/s, 8B @16 tok/s | **HAVE** | `research/demos/bonsai_mlx.md`, `research/demos/README.md` §7/§10, `research/topics/prismml_bonsai.md` |
+| 4 | On-device LoRA fine-tune of small Qwen, end-to-end (mlx_lm.lora, 1.85GB peak) | **HAVE** | `research/demos/README.md` §8, `research/topics/mlx_lora_m5.md` |
+| 5 | Distillation to small models — hybrid logits+latent KD beats scratch (+1.8%), 3 seeds, verified on this GPU | **HAVE** (toy scale) | `research/demos/latent_transfer_v3.py`, `research/demos/latent_transfer.py`, `research/topics/latent_distillation.md` |
+| 6 | Context/memory systems knowledge: compaction vs eviction, recall patterns, write policies, checkpointing | **HAVE** (knowledge; maps directly to OpenAI's finding) | `research/topics/agent_memory.md`, HarnessDev findings in harness_engineering.md |
+| 7 | Evolutionary/self-improving loop (AVO-style supervisor + memory; OpenEvolve runs on Mac) | **PARTIAL** (playbook only, nothing built) | `research/topics/avo_kernel_evolution.md` |
+| 8 | World-model / action-conditioned prediction for planning | **PARTIAL** (field map + tiny-frame-predictor recipe; overkill for v1) | `research/topics/world_models.md` |
+| 9 | Kaggle mechanics: submissions, seeds, local-sim-vs-ladder traps | **HAVE** (Kaggriculture-tested) | competition-agent-loop skill |
+| 10 | Interactive game-env connector (ARC-AGI-3 API/local runtime, choose_action loop, is_done) | **MISSING** | Stage 1, build first |
+| 11 | REPL harness (game state → Python vars, sandboxed exec, helper functions) | **MISSING** | Stage 2 (Duck replication) |
+| 12 | Grid perception: ASCII render + segmentation (flood-fill regions) of 64x64 grids | **MISSING** | Stage 2 |
+| 13 | Local scoring harness (RHAE approximation vs published human baselines, replay logs) | **MISSING** | Stage 0 |
+| 14 | Offline bundle for Kaggle eval (weights as dataset, no-internet runtime) | **MISSING** | Stage 1; confirm rules first |
+
+Net: model-serving and campaign machinery are strong; every MISSING item is game-specific
+glue (connector, REPL, perception, scorer, bundle) — all small, all buildable in stages.
+
+## 4. Staged replication plan (each stage gated, competition-agent-loop rules apply)
+
+- **Stage 0 — Setup + scorer (day 1).** Read Kaggle overview + docs.arcprize.org; install
+  the SDK; run the 25 public games locally; write the replay logger and a local RHAE
+  approximator (needs per-level human action baselines from docs/logs). Confirm: Kaggle GPU
+  type, whether model weights attach as datasets, per-day submission limits, action budget
+  per game. Gate: local scorer reproduces a known trajectory's actions/level.
+- **Stage 1 — Baseline JSON-action agent (1-2 days).** Local connector + smallest viable
+  policy: observation (ASCII grid) → small local model → JSON {what changed, plan, 1-4
+  actions}. Exploration heuristics baked in: systematic ACTION sweep on new levels,
+  dead-signature stop-list, rare-color click heuristic (Reki's, ~free on CPU). Local model
+  via mlx-lm/llama.cpp on M5 (Qwen3-8B-class to start; test Qwen3-30B-A3B-class MoE — low
+  active params may make it viable in 16GB). Gate: wins >0 public levels within the action
+  budget; log every trajectory (journal.jsonl).
+- **Stage 2 — REPL harness (Duck replication, ~1 week).** Game state → Python variables;
+  model writes helper functions and executes in a sandboxed REPL (subprocess + restricted
+  globals + timeout); emits 1-4 committed actions per turn. Perception: ASCII + optional
+  rendered image + flood-fill segmentation into clickable regions. Gate: beats Stage 1 on
+  local RHAE over ALL public games (n=all — no sampling shortcuts), ablated (law 6).
+- **Stage 3 — Context management (~3-4 days).** Per-game memory file re-injected compactly
+  (learned rules, dead signatures, level map) + persistent scratchpad across turns
+  (poor-man's retained reasoning). A/B: Duck-style pure eviction vs summarize-and-compact —
+  OpenAI's evidence says compaction + retained reasoning wins (3x score, 6x fewer tokens);
+  Duck's evidence says eviction suffices at 27B. Measure, don't assume. Gate: held-out
+  games (never-seen public levels replayed fresh), not the tuned-on set.
+- **Stage 4 — Action-efficiency tuning (ongoing).** RHAE rewards frugality: plan multi-step
+  in the REPL and simulate before committing actions; batch moves; only "spend" actions when
+  information gain or progress is expected. Target the AVO bar (~36 actions/level). Every
+  harness change gets a held-out gate (HarnessDev: only ~53% of harness tweaks generalize).
+- **Stage 5 — Stretch.** (a) AVO/OpenEvolve-style evolution of prompts/heuristics on local
+  replays (`pip install openevolve`); (b) KD of a bigger teacher policy into a servable
+  student using the verified hybrid recipe if Kaggle compute caps the model size; (c) if
+  Kaggle GPU allows, swap in the largest Qwen that fits and re-gate.
+
+## 5. Hard constraints — M5 Mac (16GB) + Kaggle
+
+- **16GB unified memory is the binding constraint.** Verified: Bonsai 27B ternary 2-bit via
+  MLX = 7.86GB peak, 5.3 tok/s; 8B 2-bit = 16 tok/s; llama.cpp Metal OOM'd on the same 27B
+  (macOS wires well under 16GB to GPU). 27B-in-GPU + anything GPU-heavy cannot coexist —
+  serialize GPU workloads. Watch `kIOGPUCommandBufferCallbackErrorOutOfMemory`.
+- **MLX is Apple-only.** Whatever runs on Kaggle's NVIDIA GPUs must be llama.cpp (CUDA build)
+  or transformers/vLLM — pick model formats that exist in BOTH worlds (GGUF for Kaggle,
+  MLX 4-bit for local dev of the same model). Test the Kaggle-side path early (Stage 1).
+- **No docker locally.** Embedded/local servers only (pattern: hindsight-embed, mlx-lm CLI,
+  llama-server). `uv` for all envs: `uv run --with mlx-lm ...`.
+- **llama.cpp custom-format trap:** Bonsai's ternary formats lack Metal kernels in stock brew
+  llama.cpp → silent CPU fallback (11+ min stall, zero tokens). On Mac use MLX builds; GGUF
+  only for the CUDA side.
+- **No internet at Kaggle eval** → the agent must be fully offline: bundled weights as a
+  Kaggle dataset, no API calls, deterministic startup. Rehearse the exact submission bundle
+  locally with networking disabled before submitting.
+- **Local-vs-leaderboard gap is documented** (3rd place winner) — don't over-fit to public
+  games; keep a falsified-list and per-change gates like any other campaign.
+
+## 6. Key links
+
+- Kaggle: https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3 · docs: https://docs.arcprize.org
+- Benchmark: https://arcprize.org/arc-agi/3 · play the 25 games: https://arcprize.org/tasks
+  · paper: arXiv:2603.24621 (RHAE + human baseline methodology)
+- Milestone #1 write-ups: https://arcprize.org/blog/arc-prize-2026-milestone-1 · Duck solution:
+  https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3/discussion/717133
+- OpenAI two-settings post: https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores/
+- NVIDIA AVO: https://arxiv.org/abs/2603.24517 + https://developer.nvidia.com/blog/nvidia-avo-reaches-100-on-arc-agi-3-demonstrating-a-frontier-level-general-purpose-architecture-for-long-horizon-autonomous-agents/
+- Local assets: `~/Documents/hai/research/demos/` (verified demos), `~/Documents/hai/research/topics/`
+  (harness_engineering, avo_kernel_evolution, agent_memory, world_models, mostik_latent_bridge,
+  prismml_bonsai, mlx_lora_m5, latent_distillation)

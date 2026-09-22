@@ -1,0 +1,1 @@
+--target cannot be used with --prompt. Use either --target <objective> or --prompt "/goal <objective>".

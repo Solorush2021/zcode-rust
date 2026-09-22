@@ -1,0 +1,11 @@
+{"name":"scase001","argv":["hooks"],"mode":"check","cwd":"/Users/vipulkumar/Documents/zai/zcode-port/ZCode/apps/zcode-cli/packages/cli/src"}
+{"name":"scase002","argv":["hooks","trust"],"mode":"check","cwd":"/Users/vipulkumar/Documents/zai/zcode-port/ZCode/apps/zcode-cli/packages/cli/src"}
+{"name":"scase003","argv":["hooks","trust","status"],"mode":"check","cwd":"/Users/vipulkumar/Documents/zai/zcode-port/ZCode/apps/zcode-cli/packages/cli/src"}
+{"name":"scase004","argv":["hooks","trust","status","--json"],"mode":"check","cwd":"/Users/vipulkumar/Documents/zai/zcode-port/ZCode/apps/zcode-cli/packages/cli/src"}
+{"name":"scase005","argv":["hooks","trust","review"],"mode":"check","cwd":"/Users/vipulkumar/Documents/zai/zcode-port/ZCode/apps/zcode-cli/packages/cli/src"}
+{"name":"scase006","argv":["hooks","trust","review","--json"],"mode":"check","cwd":"/Users/vipulkumar/Documents/zai/zcode-port/ZCode/apps/zcode-cli/packages/cli/src"}
+{"name":"scase007","argv":["hooks","trust","status","--workspace","/Users/vipulkumar/Documents/zai/zcode-port/ZCode"],"mode":"check","cwd":"/Users/vipulkumar/Documents/zai/zcode-port/ZCode/apps/zcode-cli/packages/cli/src"}
+{"name":"scase008","argv":["hooks","bogus"],"mode":"check","cwd":"/Users/vipulkumar/Documents/zai/zcode-port/ZCode/apps/zcode-cli/packages/cli/src"}
+{"name":"scase009","argv":["hooks","trust","bogus"],"mode":"check","cwd":"/Users/vipulkumar/Documents/zai/zcode-port/ZCode/apps/zcode-cli/packages/cli/src"}
+{"name":"scase010","argv":["hooks","trust","grant"],"mode":"check","cwd":"/Users/vipulkumar/Documents/zai/zcode-port/ZCode/apps/zcode-cli/packages/cli/src"}
+{"name":"scase011","argv":["hooks","trust","status","--workspace","/nonexistent"],"mode":"check","cwd":"/Users/vipulkumar/Documents/zai/zcode-port/ZCode/apps/zcode-cli/packages/cli/src"}

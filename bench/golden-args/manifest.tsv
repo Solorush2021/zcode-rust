@@ -1,0 +1,113 @@
+case001	--version	check
+case002	-v	check
+case003	--help	check
+case004	-h	check
+case005	help	check
+case006	version	check
+case007	--json--version	check
+case008	--version--json	check
+case009	--jsondoctor	mask
+case010	--json--help	check
+case011	--no-color--version	check
+case012	--verbose--version	check
+case013	--verbosedoctor	mask
+case014	--verbose--jsondoctor	mask
+case015	--foo	check
+case016	-x	check
+case017	--version=true	check
+case018	--help=false	check
+case019	-vX	check
+case020	-hv	check
+case021	--versionextra	check
+case022	extra--version	check
+case023	----version	check
+case024	--localeen--version	check
+case025	--localexx--version	check
+case026	--locale	check
+case027	--modebuild--version	check
+case028	--modebogus--version	check
+case029	--browser-useheadless--version	check
+case030	--browser-usebogus	check
+case031	--browser-executable/tmp/x--version	check
+case032	--surfacedesktop--version	check
+case033	--surfacebogus	check
+case034	--output-formatjson--version	check
+case035	--output-formatbogus	check
+case036	--target  	check
+case037	--target-replace	check
+case038	--targetx--prompty	check
+case039	--continue--resumeabc--version	check
+case040	--memory-bench	check
+case041	-p	check
+case042	--prompt	check
+case043	--cwd	check
+case044	--cwd/tmp--version	check
+case045	--force-mcs--version	check
+case046	--browser-useheadless--version	check
+case047	--all--version	check
+case048	-a--version	check
+case049	--sparsea--sparseb--version	check
+case050	--localeen--localezh--version	check
+case051	-vv	check
+case052	--version--version	check
+case053	--Promptx	check
+case054	--VERSION	check
+case055	----	check
+case056		check
+case057	 	check
+case058	--disallowed-toolsWebSearch--version	check
+case059	--disallowed-tools	check
+case060	--disallowed-tools=WebSearch,Grep--version	check
+case061	skills	check
+case062	skillslist	check
+case063	skillsinspect	check
+case064	skillsinspectagent-browser	check
+case065	skillsbogus	check
+case066	commands	check
+case067	commandslist	check
+case068	commandsinspect	check
+case069	commandsbogus	check
+case070	plugins	check
+case071	pluginslist	check
+case072	pluginsbogus	check
+case073	doctorextra	mask
+case074	version--json	check
+case075	-pfoo--version	check
+case076	-p=foo--version	check
+case077	--locale--version	check
+case078	--locale----version	check
+case079	--json=x--version	check
+case080	--memory-bench--version	check
+case081	--cwd/definitely/not/here--version	check
+case082	--foo=bar	check
+case083	--all=1--version	check
+case084	--scope	check
+case085	-s	check
+case086	-sx--version	check
+case087	--attach	check
+case088	--attacha--version	check
+case089	--prompthello--version	check
+case090	------version	check
+case091	--version--	check
+case092	-phello	skip
+case093	--targetabc	skip
+case094	--browser-useheadless	check
+case095	--surfaceterminal--version	check
+case096	--output-formatstream-json--version	check
+case097	--no-browser--version	check
+case098	--force--version	check
+case099	--stdio--version	check
+case100	--prepare-storage--version	check
+case101	--keep-data--version	check
+case102	--available--version	check
+case103	--verbose--jsonskillslist	check
+case104	--jsonskillslist	check
+case105	--jsoncommandslist	check
+case106	--jsonpluginslist	check
+case107	--jsonskillsinspectnosuch	check
+case108	--jsoncommandsinspectnosuch	check
+case109	skillsinspectarc-agi3-agent	check
+case110	commandsinspect/review:code	check
+case111	-s-x	check
+case112	--scope-x	check
+case113	hooks	check

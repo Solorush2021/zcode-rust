@@ -1,0 +1,659 @@
+[
+  {
+    "commandRootCount": 0,
+    "dataPath": "/Users/vipulkumar/.zcode/cli/plugins/data/node-repl-host@zcode-plugins-official",
+    "enabled": true,
+    "id": "node-repl-host@zcode-plugins-official",
+    "manifestPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/node-repl-host/0.6.0/.zcode-plugin/plugin.json",
+    "marketplace": "zcode-plugins-official",
+    "declaredMcpServerNames": [],
+    "mcpServerNames": [],
+    "hookDetails": [],
+    "name": "node-repl-host",
+    "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/node-repl-host/0.6.0",
+    "skillCount": 0,
+    "skillRootCount": 0,
+    "source": "official",
+    "diagnostics": [],
+    "description": "Shared node_repl runtime host for ZCode official capabilities. Not user-facing: it carries no skill and appears in no marketplace listing; Browser Use and Computer Use enable it and contribute their own skills, docs and runtime assets.",
+    "version": "0.6.0"
+  },
+  {
+    "commandRootCount": 0,
+    "dataPath": "/Users/vipulkumar/.zcode/cli/plugins/data/browser-use@zcode-plugins-official",
+    "enabled": true,
+    "id": "browser-use@zcode-plugins-official",
+    "manifestPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/browser-use/0.5.1/.zcode-plugin/plugin.json",
+    "marketplace": "zcode-plugins-official",
+    "declaredMcpServerNames": [],
+    "mcpServerNames": [],
+    "hookDetails": [],
+    "name": "browser-use",
+    "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/browser-use/0.5.1",
+    "skillCount": 2,
+    "skillRootCount": 1,
+    "source": "official",
+    "diagnostics": [],
+    "description": "Built-in browser automation runtime and guidance for Desktop IAB and explicitly enabled CLI-managed headless CDP: open, navigate, inspect, click, type, screenshot, record workspace WebM videos, and verify web pages and local dev targets.",
+    "version": "0.5.1"
+  },
+  {
+    "commandRootCount": 1,
+    "dataPath": "/Users/vipulkumar/.zcode/cli/plugins/data/video2code@zcode-plugins-official",
+    "enabled": true,
+    "id": "video2code@zcode-plugins-official",
+    "manifestPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video2code/0.6.0/.zcode-plugin/plugin.json",
+    "marketplace": "zcode-plugins-official",
+    "declaredMcpServerNames": [
+      "runtime",
+      "video"
+    ],
+    "mcpServerNames": [
+      "plugin:video2code:runtime",
+      "plugin:video2code:video"
+    ],
+    "hookDetails": [
+      {
+        "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/env_check.py\"",
+        "event": "SessionStart",
+        "runnable": true,
+        "sourcePath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video2code/0.6.0/hooks/hooks.json",
+        "type": "command",
+        "matcher": "startup|clear|compact",
+        "statusMessage": "video2code 环境检查…",
+        "timeout": 30
+      },
+      {
+        "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/check_video_input.py\"",
+        "event": "UserPromptSubmit",
+        "runnable": true,
+        "sourcePath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video2code/0.6.0/hooks/hooks.json",
+        "type": "command",
+        "timeout": 15
+      },
+      {
+        "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/check_url_input.py\"",
+        "event": "UserPromptSubmit",
+        "runnable": true,
+        "sourcePath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video2code/0.6.0/hooks/hooks.json",
+        "type": "command",
+        "timeout": 10
+      },
+      {
+        "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/check_plan_first.py\"",
+        "event": "PreToolUse",
+        "runnable": true,
+        "sourcePath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video2code/0.6.0/hooks/hooks.json",
+        "type": "command",
+        "matcher": "Write|Edit",
+        "timeout": 10
+      },
+      {
+        "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/check_closeout.py\"",
+        "event": "Stop",
+        "runnable": true,
+        "sourcePath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video2code/0.6.0/hooks/hooks.json",
+        "type": "command",
+        "timeout": 15
+      }
+    ],
+    "name": "video2code",
+    "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video2code/0.6.0",
+    "skillCount": 6,
+    "skillRootCount": 1,
+    "source": "cache",
+    "diagnostics": [],
+    "description": "基于 ZCode 内置 Browser Use WebView 录制 WebM 并用 ffmpeg 转成 MP4/URL 复刻；无需 Playwright 或外部 Chromium",
+    "version": "0.6.0"
+  },
+  {
+    "commandRootCount": 1,
+    "dataPath": "/Users/vipulkumar/.zcode/cli/plugins/data/video-agent-kit@zcode-plugins-official",
+    "enabled": true,
+    "id": "video-agent-kit@zcode-plugins-official",
+    "manifestPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video-agent-kit/0.4.3/.zcode-plugin/plugin.json",
+    "marketplace": "zcode-plugins-official",
+    "declaredMcpServerNames": [
+      "video-edit"
+    ],
+    "mcpServerNames": [
+      "plugin:video-agent-kit:video-edit"
+    ],
+    "hookDetails": [
+      {
+        "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/env_check.py\"",
+        "event": "SessionStart",
+        "runnable": true,
+        "sourcePath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video-agent-kit/0.4.3/hooks/hooks.json",
+        "type": "command",
+        "matcher": "startup|resume|clear|compact",
+        "statusMessage": "video-agent-kit environment check...",
+        "timeout": 30
+      },
+      {
+        "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/check_video_input.py\"",
+        "event": "UserPromptSubmit",
+        "runnable": true,
+        "sourcePath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video-agent-kit/0.4.3/hooks/hooks.json",
+        "type": "command",
+        "timeout": 15
+      },
+      {
+        "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/check_closeout.py\"",
+        "event": "Stop",
+        "runnable": true,
+        "sourcePath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video-agent-kit/0.4.3/hooks/hooks.json",
+        "type": "command",
+        "timeout": 15
+      }
+    ],
+    "name": "video-agent-kit",
+    "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video-agent-kit/0.4.3",
+    "skillCount": 5,
+    "skillRootCount": 1,
+    "source": "cache",
+    "diagnostics": [],
+    "description": "自动化视频剪辑工具包: 标准云端语音转录与合成、完整视频抽帧理解、局部复看、时间线、预览渲染、QC 和 TTS。",
+    "version": "0.4.3"
+  },
+  {
+    "commandRootCount": 0,
+    "dataPath": "/Users/vipulkumar/.zcode/cli/plugins/data/write-research@zcode-plugins-official",
+    "enabled": false,
+    "id": "write-research@zcode-plugins-official",
+    "manifestPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/write-research/0.1.1/.zcode-plugin/plugin.json",
+    "marketplace": "zcode-plugins-official",
+    "declaredMcpServerNames": [
+      "sec-search",
+      "hexin-stock",
+      "hexin-global-stock",
+      "hexin-index",
+      "wind-stock",
+      "finance-search",
+      "wind-economic",
+      "wind-docs"
+    ],
+    "mcpServerNames": [],
+    "hookDetails": [],
+    "name": "write-research",
+    "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/write-research/0.1.1",
+    "skillCount": 0,
+    "skillRootCount": 0,
+    "source": "cache",
+    "diagnostics": [],
+    "description": "End-to-end investment research reports, sector analysis, earnings updates, and valuation models",
+    "version": "0.1.1"
+  },
+  {
+    "commandRootCount": 0,
+    "dataPath": "/Users/vipulkumar/.zcode/cli/plugins/data/read-macro@zcode-plugins-official",
+    "enabled": false,
+    "id": "read-macro@zcode-plugins-official",
+    "manifestPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/read-macro/0.1.1/.zcode-plugin/plugin.json",
+    "marketplace": "zcode-plugins-official",
+    "declaredMcpServerNames": [
+      "hexin-index",
+      "hexin-stock",
+      "finance-search",
+      "wind-index",
+      "wind-economic",
+      "wind-docs"
+    ],
+    "mcpServerNames": [],
+    "hookDetails": [],
+    "name": "read-macro",
+    "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/read-macro/0.1.1",
+    "skillCount": 0,
+    "skillRootCount": 0,
+    "source": "cache",
+    "diagnostics": [],
+    "description": "Top-down macro and strategy work: macro dashboards across growth/inflation/liquidity/credit, index valuation percentiles and earnings attribution, cross-asset allocation views, and policy and industrial-plan tracking",
+    "version": "0.1.1"
+  },
+  {
+    "commandRootCount": 0,
+    "dataPath": "/Users/vipulkumar/.zcode/cli/plugins/data/vet-companies@zcode-plugins-official",
+    "enabled": false,
+    "id": "vet-companies@zcode-plugins-official",
+    "manifestPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/vet-companies/0.1.2/.zcode-plugin/plugin.json",
+    "marketplace": "zcode-plugins-official",
+    "declaredMcpServerNames": [
+      "tianyancha",
+      "hexin-bond",
+      "wind-docs"
+    ],
+    "mcpServerNames": [],
+    "hookDetails": [],
+    "name": "vet-companies",
+    "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/vet-companies/0.1.2",
+    "skillCount": 0,
+    "skillRootCount": 0,
+    "source": "cache",
+    "diagnostics": [],
+    "description": "Counterparty and company due diligence: structured DD reports, related-party and supply-chain mapping, and risk scans (litigation, dishonesty records, pledges, penalties) for Chinese enterprises",
+    "version": "0.1.2"
+  },
+  {
+    "commandRootCount": 0,
+    "dataPath": "/Users/vipulkumar/.zcode/cli/plugins/data/model-deals@zcode-plugins-official",
+    "enabled": false,
+    "id": "model-deals@zcode-plugins-official",
+    "manifestPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/model-deals/0.1.1/.zcode-plugin/plugin.json",
+    "marketplace": "zcode-plugins-official",
+    "declaredMcpServerNames": [
+      "hexin-stock",
+      "finance-search",
+      "wind-stock",
+      "wind-docs"
+    ],
+    "mcpServerNames": [],
+    "hookDetails": [],
+    "name": "model-deals",
+    "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/model-deals/0.1.1",
+    "skillCount": 0,
+    "skillRootCount": 0,
+    "source": "cache",
+    "diagnostics": [],
+    "description": "Transaction structuring and modeling: accretion/dilution analysis, sources and uses with pro-forma capital structure, precedent-transaction comps, and capital-raise dilution modeling for M&A, IPO, placements, and rights issues",
+    "version": "0.1.1"
+  },
+  {
+    "commandRootCount": 0,
+    "dataPath": "/Users/vipulkumar/.zcode/cli/plugins/data/watch-positions@zcode-plugins-official",
+    "enabled": false,
+    "id": "watch-positions@zcode-plugins-official",
+    "manifestPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/watch-positions/0.1.1/.zcode-plugin/plugin.json",
+    "marketplace": "zcode-plugins-official",
+    "declaredMcpServerNames": [
+      "hexin-stock",
+      "hexin-index",
+      "finance-search",
+      "wind-stock",
+      "wind-docs"
+    ],
+    "mcpServerNames": [],
+    "hookDetails": [],
+    "name": "watch-positions",
+    "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/watch-positions/0.1.1",
+    "skillCount": 0,
+    "skillRootCount": 0,
+    "source": "cache",
+    "diagnostics": [],
+    "description": "Watchlist and portfolio monitoring: after-close recaps, position event alerts (announcements, pledges, lockup expiries), and intraday move attribution for A/H/US names",
+    "version": "0.1.1"
+  },
+  {
+    "commandRootCount": 0,
+    "dataPath": "/Users/vipulkumar/.zcode/cli/plugins/data/pick-funds@zcode-plugins-official",
+    "enabled": false,
+    "id": "pick-funds@zcode-plugins-official",
+    "manifestPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/pick-funds/0.1.1/.zcode-plugin/plugin.json",
+    "marketplace": "zcode-plugins-official",
+    "declaredMcpServerNames": [
+      "hexin-fund",
+      "hexin-index",
+      "hexin-stock",
+      "finance-search",
+      "wind-fund",
+      "wind-docs"
+    ],
+    "mcpServerNames": [],
+    "hookDetails": [],
+    "name": "pick-funds",
+    "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/pick-funds/0.1.1",
+    "skillCount": 0,
+    "skillRootCount": 0,
+    "source": "cache",
+    "diagnostics": [],
+    "description": "Fund and fund-manager research: multi-criteria fund screening, fund and manager profiles, holdings and style analysis, and shortlist comparisons for funds, ETFs, and LOFs",
+    "version": "0.1.1"
+  },
+  {
+    "commandRootCount": 0,
+    "dataPath": "/Users/vipulkumar/.zcode/cli/plugins/data/assess-credit@zcode-plugins-official",
+    "enabled": false,
+    "id": "assess-credit@zcode-plugins-official",
+    "manifestPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/assess-credit/0.1.2/.zcode-plugin/plugin.json",
+    "marketplace": "zcode-plugins-official",
+    "declaredMcpServerNames": [
+      "hexin-bond",
+      "wind-bond",
+      "wind-economic",
+      "tianyancha",
+      "wind-docs"
+    ],
+    "mcpServerNames": [],
+    "hookDetails": [],
+    "name": "assess-credit",
+    "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/assess-credit/0.1.2",
+    "skillCount": 0,
+    "skillRootCount": 0,
+    "source": "cache",
+    "diagnostics": [],
+    "description": "Fixed-income and credit research: bond profiles with valuation and duration/convexity/spread, issuer credit assessment, yield-curve and credit-spread analysis, and credit-risk watchlists for onshore bonds",
+    "version": "0.1.2"
+  },
+  {
+    "commandRootCount": 0,
+    "dataPath": "/Users/vipulkumar/.zcode/cli/plugins/data/run-fpa@zcode-plugins-official",
+    "enabled": false,
+    "id": "run-fpa@zcode-plugins-official",
+    "manifestPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/run-fpa/0.1.1/.zcode-plugin/plugin.json",
+    "marketplace": "zcode-plugins-official",
+    "declaredMcpServerNames": [
+      "hexin-stock",
+      "wind-economic"
+    ],
+    "mcpServerNames": [],
+    "hookDetails": [],
+    "name": "run-fpa",
+    "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/run-fpa/0.1.1",
+    "skillCount": 0,
+    "skillRootCount": 0,
+    "source": "cache",
+    "diagnostics": [],
+    "description": "Corporate finance and FP&A: management reporting off a closed ledger, rolling cash-flow forecasts, budget-versus-actual variance analysis, scenario and break-even analysis, and peer benchmarking against listed comparables",
+    "version": "0.1.1"
+  },
+  {
+    "commandRootCount": 0,
+    "dataPath": "/Users/vipulkumar/.zcode/cli/plugins/data/accounting-and-reporting@zcode-plugins-official",
+    "enabled": false,
+    "id": "accounting-and-reporting@zcode-plugins-official",
+    "manifestPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/accounting-and-reporting/0.1.1/.zcode-plugin/plugin.json",
+    "marketplace": "zcode-plugins-official",
+    "declaredMcpServerNames": [],
+    "mcpServerNames": [],
+    "hookDetails": [],
+    "name": "accounting-and-reporting",
+    "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/accounting-and-reporting/0.1.1",
+    "skillCount": 0,
+    "skillRootCount": 0,
+    "source": "cache",
+    "diagnostics": [],
+    "description": "Accounting close and statutory reporting off the company's own ledger: month-end close checks, ledger reconciliation to transaction-level root cause, account mapping for consolidation, and statutory statements delivered as review-ready drafts",
+    "version": "0.1.1"
+  },
+  {
+    "commandRootCount": 0,
+    "dataPath": "/Users/vipulkumar/.zcode/cli/plugins/data/find-clients@zcode-plugins-official",
+    "enabled": false,
+    "id": "find-clients@zcode-plugins-official",
+    "manifestPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/find-clients/0.1.2/.zcode-plugin/plugin.json",
+    "marketplace": "zcode-plugins-official",
+    "declaredMcpServerNames": [
+      "tianyancha",
+      "finance-search",
+      "wind-docs"
+    ],
+    "mcpServerNames": [],
+    "hookDetails": [],
+    "name": "find-clients",
+    "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/find-clients/0.1.2",
+    "skillCount": 0,
+    "skillRootCount": 0,
+    "source": "cache",
+    "diagnostics": [],
+    "description": "Corporate-banking client acquisition: prospect screening by region, industry chain, park and cluster, business-opportunity scanning, and full client portraits combining registry, relationships, opportunity signals and risk",
+    "version": "0.1.2"
+  },
+  {
+    "commandRootCount": 0,
+    "dataPath": "/Users/vipulkumar/.zcode/cli/plugins/data/finance-search@zcode-plugins-official",
+    "enabled": false,
+    "id": "finance-search@zcode-plugins-official",
+    "manifestPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/finance-search/0.1.0/.zcode-plugin/plugin.json",
+    "marketplace": "zcode-plugins-official",
+    "declaredMcpServerNames": [
+      "sec-search",
+      "finance-search"
+    ],
+    "mcpServerNames": [],
+    "hookDetails": [],
+    "name": "finance-search",
+    "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/finance-search/0.1.0",
+    "skillCount": 0,
+    "skillRootCount": 0,
+    "source": "cache",
+    "diagnostics": [],
+    "description": "MCP services for SEC EDGAR filing search and financial web and news search.",
+    "version": "0.1.0"
+  },
+  {
+    "commandRootCount": 0,
+    "dataPath": "/Users/vipulkumar/.zcode/cli/plugins/data/wind@zcode-plugins-official",
+    "enabled": false,
+    "id": "wind@zcode-plugins-official",
+    "manifestPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/wind/0.1.0/.zcode-plugin/plugin.json",
+    "marketplace": "zcode-plugins-official",
+    "declaredMcpServerNames": [
+      "wind-stock",
+      "wind-index",
+      "wind-fund",
+      "wind-bond",
+      "wind-economic",
+      "wind-docs",
+      "wind-global-stock"
+    ],
+    "mcpServerNames": [],
+    "hookDetails": [],
+    "name": "wind",
+    "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/wind/0.1.0",
+    "skillCount": 0,
+    "skillRootCount": 0,
+    "source": "cache",
+    "diagnostics": [],
+    "description": "MCP services for Wind stock, global stock, index, fund, bond, economic, and document data.",
+    "version": "0.1.0"
+  },
+  {
+    "commandRootCount": 0,
+    "dataPath": "/Users/vipulkumar/.zcode/cli/plugins/data/hexin@zcode-plugins-official",
+    "enabled": false,
+    "id": "hexin@zcode-plugins-official",
+    "manifestPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/hexin/0.1.0/.zcode-plugin/plugin.json",
+    "marketplace": "zcode-plugins-official",
+    "declaredMcpServerNames": [
+      "hexin-stock",
+      "hexin-global-stock",
+      "hexin-index",
+      "hexin-fund",
+      "hexin-bond"
+    ],
+    "mcpServerNames": [],
+    "hookDetails": [],
+    "name": "hexin",
+    "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/hexin/0.1.0",
+    "skillCount": 0,
+    "skillRootCount": 0,
+    "source": "cache",
+    "diagnostics": [],
+    "description": "MCP services for RoyalFlush iFinD stock, global stock, index, fund, and bond data.",
+    "version": "0.1.0"
+  },
+  {
+    "commandRootCount": 0,
+    "dataPath": "/Users/vipulkumar/.zcode/cli/plugins/data/tianyancha@zcode-plugins-official",
+    "enabled": false,
+    "id": "tianyancha@zcode-plugins-official",
+    "manifestPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/tianyancha/0.1.0/.zcode-plugin/plugin.json",
+    "marketplace": "zcode-plugins-official",
+    "declaredMcpServerNames": [
+      "tianyancha"
+    ],
+    "mcpServerNames": [],
+    "hookDetails": [],
+    "name": "tianyancha",
+    "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/tianyancha/0.1.0",
+    "skillCount": 0,
+    "skillRootCount": 0,
+    "source": "cache",
+    "diagnostics": [],
+    "description": "MCP service for Tianyancha company information queries.",
+    "version": "0.1.0"
+  },
+  {
+    "commandRootCount": 0,
+    "dataPath": "/Users/vipulkumar/.zcode/cli/plugins/data/github@zcode-plugins-official",
+    "enabled": false,
+    "id": "github@zcode-plugins-official",
+    "manifestPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/github/0.1.2/.zcode-plugin/plugin.json",
+    "marketplace": "zcode-plugins-official",
+    "declaredMcpServerNames": [],
+    "mcpServerNames": [],
+    "hookDetails": [],
+    "name": "github",
+    "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/github/0.1.2",
+    "skillCount": 0,
+    "skillRootCount": 0,
+    "source": "cache",
+    "diagnostics": [],
+    "description": "GitHub CLI workflows for commits, pull requests, issues, releases, Actions, repositories, Codespaces, and other GitHub resources.",
+    "version": "0.1.2"
+  },
+  {
+    "commandRootCount": 0,
+    "dataPath": "/Users/vipulkumar/.zcode/cli/plugins/data/gitlab@zcode-plugins-official",
+    "enabled": false,
+    "id": "gitlab@zcode-plugins-official",
+    "manifestPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/gitlab/0.1.3/.zcode-plugin/plugin.json",
+    "marketplace": "zcode-plugins-official",
+    "declaredMcpServerNames": [],
+    "mcpServerNames": [],
+    "hookDetails": [],
+    "name": "gitlab",
+    "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/gitlab/0.1.3",
+    "skillCount": 0,
+    "skillRootCount": 0,
+    "source": "cache",
+    "diagnostics": [],
+    "description": "GitLab CLI workflows based on GitLab's official Agent Skills for merge requests, issues, CI/CD, repositories, releases, and API operations.",
+    "version": "0.1.3"
+  },
+  {
+    "commandRootCount": 0,
+    "dataPath": "/Users/vipulkumar/.zcode/cli/plugins/data/obsidian@zcode-plugins-official",
+    "enabled": false,
+    "id": "obsidian@zcode-plugins-official",
+    "manifestPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/obsidian/0.1.2/.zcode-plugin/plugin.json",
+    "marketplace": "zcode-plugins-official",
+    "declaredMcpServerNames": [],
+    "mcpServerNames": [],
+    "hookDetails": [],
+    "name": "obsidian",
+    "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/obsidian/0.1.2",
+    "skillCount": 0,
+    "skillRootCount": 0,
+    "source": "cache",
+    "diagnostics": [],
+    "description": "Obsidian authoring skills from kepano/obsidian-skills: Obsidian Flavored Markdown notes, Bases database views, JSON Canvas boards, vault automation via Obsidian CLI, clean web extraction with Defuddle, and Knap template rendering — plus visualization skills from axtonliu/axton-obsidian-visual-skills: Mermaid and Excalidraw diagram generation and text-to-canvas layout. A setup skill verifies and installs the Obsidian CLI, defuddle, and knap.",
+    "version": "0.1.2"
+  },
+  {
+    "commandRootCount": 0,
+    "dataPath": "/Users/vipulkumar/.zcode/cli/plugins/data/mimosa@zcode-plugins-official",
+    "enabled": false,
+    "id": "mimosa@zcode-plugins-official",
+    "manifestPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/mimosa/1.0.3/.zcode-plugin/plugin.json",
+    "marketplace": "zcode-plugins-official",
+    "declaredMcpServerNames": [
+      "mimosa"
+    ],
+    "mcpServerNames": [],
+    "hookDetails": [
+      {
+        "command": "node",
+        "event": "PreToolUse",
+        "runnable": true,
+        "sourcePath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/mimosa/1.0.3/hooks/hooks.json",
+        "type": "process",
+        "args": [
+          "${ZCODE_PLUGIN_ROOT}/payload/hooks/scan-hook.mjs"
+        ],
+        "matcher": "Edit|Write|MultiEdit",
+        "statusMessage": "Mimosa 正在检查候选代码…",
+        "timeoutMs": 120000
+      },
+      {
+        "command": "node",
+        "event": "PreToolUse",
+        "runnable": true,
+        "sourcePath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/mimosa/1.0.3/hooks/hooks.json",
+        "type": "process",
+        "args": [
+          "${ZCODE_PLUGIN_ROOT}/payload/hooks/git-gate-hook.mjs"
+        ],
+        "matcher": "Bash",
+        "statusMessage": "Mimosa 正在检查命令与 Git 门禁…",
+        "timeoutMs": 120000
+      },
+      {
+        "command": "node",
+        "event": "PostToolUse",
+        "runnable": true,
+        "sourcePath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/mimosa/1.0.3/hooks/hooks.json",
+        "type": "process",
+        "args": [
+          "${ZCODE_PLUGIN_ROOT}/payload/hooks/scan-hook.mjs"
+        ],
+        "matcher": "Edit|Write|MultiEdit",
+        "timeoutMs": 120000
+      },
+      {
+        "command": "node",
+        "event": "PostToolUse",
+        "runnable": true,
+        "sourcePath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/mimosa/1.0.3/hooks/hooks.json",
+        "type": "process",
+        "args": [
+          "${ZCODE_PLUGIN_ROOT}/payload/hooks/git-gate-hook.mjs"
+        ],
+        "matcher": "Bash",
+        "timeoutMs": 120000
+      },
+      {
+        "command": "node",
+        "event": "UserPromptSubmit",
+        "runnable": true,
+        "sourcePath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/mimosa/1.0.3/hooks/hooks.json",
+        "type": "process",
+        "args": [
+          "${ZCODE_PLUGIN_ROOT}/payload/hooks/prompt-hook.mjs"
+        ],
+        "timeoutMs": 30000
+      },
+      {
+        "command": "node",
+        "event": "SessionStart",
+        "runnable": true,
+        "sourcePath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/mimosa/1.0.3/hooks/hooks.json",
+        "type": "process",
+        "args": [
+          "${ZCODE_PLUGIN_ROOT}/payload/hooks/session-hook.mjs"
+        ],
+        "statusMessage": "Mimosa 正在准备项目安全上下文…",
+        "timeoutMs": 120000
+      },
+      {
+        "command": "node",
+        "event": "Stop",
+        "runnable": true,
+        "sourcePath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/mimosa/1.0.3/hooks/hooks.json",
+        "type": "process",
+        "args": [
+          "${ZCODE_PLUGIN_ROOT}/payload/hooks/stop-hook.mjs"
+        ],
+        "statusMessage": "Mimosa 正在复查本轮改动…",
+        "timeoutMs": 120000
+      }
+    ],
+    "name": "mimosa",
+    "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/mimosa/1.0.3",
+    "skillCount": 0,
+    "skillRootCount": 0,
+    "source": "cache",
+    "diagnostics": [],
+    "description": "Local-first security guardrails for ZCode with pre-write hooks, end-of-turn review, Git gates, commands, a security-scan skill, and an optional MCP server for sealed deep scans.",
+    "version": "1.0.3"
+  }
+]

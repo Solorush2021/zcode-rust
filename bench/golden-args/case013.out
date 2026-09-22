@@ -1,0 +1,9 @@
+zcode doctor
+version: 0.16.9
+process: zcode-cli
+node: v26.8.1
+platform: darwin/arm64
+sea: no (optional)
+default artifact: node-bundle
+execPath: /opt/homebrew/Cellar/node/26.8.1/bin/node
+cwd: /Users/vipulkumar/Documents/zai/zcode-port

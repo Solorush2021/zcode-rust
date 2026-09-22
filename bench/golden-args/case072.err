@@ -1,0 +1,19 @@
+Unknown plugins command: bogus
+Usage: zcode plugins <command> [options]
+
+Commands:
+  list [--json] [--available]                  List installed plugins; --available also lists the marketplace catalog
+  install <plugin>[@marketplace] [-s <scope>]  Install a plugin from a known marketplace
+  uninstall <plugin> [-s <scope>] [--keep-data] [--force]
+                                               Uninstall a plugin (--keep-data keeps its data directory)
+  enable <plugin> [-s <scope>]                 Enable a plugin
+  disable [plugin] [-a|--all] [-s <scope>]     Disable a plugin, or every enabled plugin with --all
+  update <plugin> [-s <scope>]                 Update a plugin to the latest marketplace version
+  validate <path>                              Validate a plugin or marketplace manifest
+  marketplace add <source> [--scope <scope>] [--sparse <path>]
+                                               Add a marketplace from a URL, path, or GitHub repo
+  marketplace list [--json]                    List configured marketplaces
+  marketplace remove <name>                    Remove a configured marketplace
+  marketplace update [name]                    Refresh one marketplace, or all when omitted
+
+Scopes: user (default), project. `zcode plugin` is an alias of `zcode plugins`.

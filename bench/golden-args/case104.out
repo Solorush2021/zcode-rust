@@ -1,0 +1,285 @@
+{
+  "cwd": "/Users/vipulkumar/Documents/zai/zcode-port",
+  "diagnostics": [],
+  "skills": [
+    {
+      "description": "Playbook for the ARC-AGI-3 game-agent campaign (Kaggle \"ARC Prize 2026 - ARC-AGI-3\"). Covers scoring rules (RHAE action-efficiency vs human baselines), what won (Tufa Labs Duck REPL harness, OpenAI retained-reasoning + compaction finding), our HAVE/PARTIAL/MISSING inventory with pointers to existing assets, and a staged replication plan for M5 Mac (MLX/llama.cpp/uv, no CUDA/docker). Use when the user mentions ARC-AGI-3, ARC Prize, ARC-AGI game agent, interactive game-playing agent, or RHAE.",
+      "directory": "/Users/vipulkumar/.agents/skills/arc-agi3-agent",
+      "name": "arc-agi3-agent",
+      "path": "/Users/vipulkumar/.agents/skills/arc-agi3-agent/SKILL.md",
+      "rootPath": "/Users/vipulkumar/.agents/skills",
+      "scope": "user",
+      "source": "agents"
+    },
+    {
+      "description": "Ultra-compressed communication mode that cuts output tokens while keeping technical accuracy. Use whenever Vipul says \"be brief\", \"terse\", \"caveman\", \"less tokens\", \"stop rambling\", \"shorter\", or when a long explanation is clearly unwanted. Complements his default one-line-per-point style by going full terse on demand. Not for code/comments/commits/docs (those stay normal).",
+      "directory": "/Users/vipulkumar/.agents/skills/caveman",
+      "name": "caveman",
+      "path": "/Users/vipulkumar/.agents/skills/caveman/SKILL.md",
+      "rootPath": "/Users/vipulkumar/.agents/skills",
+      "scope": "user",
+      "source": "agents"
+    },
+    {
+      "description": "Vipul's AI-run company framework — combines best GitHub marketing/growth skills with department-by-department automation (marketing knobs, finance, product, support) into a self-improving orchestrator. Use when he mentions marketing campaigns, company automation, orchestrator, AI CEO/CTO/CMO, growth loops, running the startup on agents.",
+      "directory": "/Users/vipulkumar/.agents/skills/company-orchestrator",
+      "name": "company-orchestrator",
+      "path": "/Users/vipulkumar/.agents/skills/company-orchestrator/SKILL.md",
+      "rootPath": "/Users/vipulkumar/.agents/skills",
+      "scope": "user",
+      "source": "agents"
+    },
+    {
+      "description": "Hard-won playbook for autonomous competition-optimization agent loops (Kaggle simulations, ladder/Bradley-Terry comps, any long-running \"build a better bot\" campaign). Use when running multi-day agent-improvement campaigns, evolution/search loops, submission pipelines, or subagent fleets — encodes every mistake and fix from the Kaggriculture campaign so future runs don't repeat them.",
+      "directory": "/Users/vipulkumar/.agents/skills/competition-agent-loop",
+      "name": "competition-agent-loop",
+      "path": "/Users/vipulkumar/.agents/skills/competition-agent-loop/SKILL.md",
+      "rootPath": "/Users/vipulkumar/.agents/skills",
+      "scope": "user",
+      "source": "agents"
+    },
+    {
+      "description": "Use when opening, navigating, inspecting, testing, clicking, typing, filling, screenshotting, or verifying web pages and local HTTP targets (localhost, 127.0.0.1, ::1) inside ZCode, including browser/web-UI automation, rendered-page scraping, frontend checks, and visible page-state reading. Prefer this over Computer Use for anything that stays inside a web page, unless the user explicitly asks for Computer Use. Main agent only.",
+      "directory": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/browser-use/0.5.1/skills/control-browser",
+      "name": "control-browser",
+      "path": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/browser-use/0.5.1/skills/control-browser/SKILL.md",
+      "pluginName": "browser-use",
+      "qualifiedName": "browser-use:control-browser",
+      "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/browser-use/0.5.1/skills",
+      "scope": "system",
+      "source": "plugin"
+    },
+    {
+      "description": "Check and provision the video2code plugin environment: Python/MCP/video packages, ffmpeg/ffprobe, Node/npm, registry, and webapp cache. Browser interaction and recording use ZCode's built-in Browser Use WebView, so Playwright and external Chromium are intentionally not installed.",
+      "directory": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video2code/0.6.0/skills/env-setup",
+      "name": "env-setup",
+      "path": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video2code/0.6.0/skills/env-setup/SKILL.md",
+      "pluginName": "video2code",
+      "qualifiedName": "video2code:env-setup",
+      "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video2code/0.6.0/skills",
+      "scope": "user",
+      "source": "plugin"
+    },
+    {
+      "description": "Checking and provisioning the machine's environment for the video-agent-kit plugin — probing for ffmpeg/ffprobe that actually carry the encoders and filters we render with (libx264/aac/libmp3lame, libass, libfreetype), python packages (mcp, cv2, numpy, PIL, jieba, fontTools, scenedetect) in the interpreter Claude Code really uses, a CJK font whose cmap truly covers Chinese, and which speech channel is in play (under ZCode the official channel needs no local key) — then installing what is missing (China mirrors by default) or telling the user exactly what to install. Works on macOS, Windows and Linux. Use BEFORE the first edit run on a new machine, when the session-start hook reports 缺失依赖, or whenever a tool fails in an environment-shaped way — ModuleNotFoundError, `ffmpeg not found`, `Unknown encoder 'libx264'`, `No such filter: 'subtitles'`, `no font file found for family`, 字幕烧成豆腐块/方块, speech_transcribe 超时或 401. Also use when asked to 检查环境 / 装依赖 / 配国内源 / setup / doctor.",
+      "directory": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video-agent-kit/0.4.3/skills/env-setup",
+      "name": "env-setup",
+      "path": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video-agent-kit/0.4.3/skills/env-setup/SKILL.md",
+      "pluginName": "video-agent-kit",
+      "qualifiedName": "video-agent-kit:env-setup",
+      "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video-agent-kit/0.4.3/skills",
+      "scope": "user",
+      "source": "plugin"
+    },
+    {
+      "description": "Vipul's standing env rules + self-improving machine-setup playbook. Use whenever installing ANY tool, setting up ANY environment (python, node, media, dev), creating a venv, or when he says \"set up\", \"install\", \"new machine\", \"environment\". Also use uv ALWAYS for python.",
+      "directory": "/Users/vipulkumar/.agents/skills/fast-setup",
+      "name": "fast-setup",
+      "path": "/Users/vipulkumar/.agents/skills/fast-setup/SKILL.md",
+      "rootPath": "/Users/vipulkumar/.agents/skills",
+      "scope": "user",
+      "source": "agents"
+    },
+    {
+      "description": "Deep-research + build program for DLSS-5-style neural realism (one-step diffusion post-processing) and replicating it on AMD/mobile (Android/iOS). Use when Vipul mentions DLSS, neural rendering, AI graphics enhancement, frame upscaling/interpolation, making games look realistic/photoreal, RTX Kit, FSR, video/game frame AI enhancement.",
+      "directory": "/Users/vipulkumar/.agents/skills/neural-rendering",
+      "name": "neural-rendering",
+      "path": "/Users/vipulkumar/.agents/skills/neural-rendering/SKILL.md",
+      "rootPath": "/Users/vipulkumar/.agents/skills",
+      "scope": "user",
+      "source": "agents"
+    },
+    {
+      "description": "Forces the laziest solution that actually works. Use on ANY coding task: writing, adding, refactoring, fixing, reviewing, or designing code, and choosing libraries or dependencies. Triggers whenever Vipul says \"be lazy\", \"laziest\", \"simplest solution\", \"minimal solution\", \"yagni\", \"do less\", \"shortest path\", \"less code\", or complains about over-engineering, bloat, boilerplate, or unnecessary dependencies. Do NOT use for non-coding requests (general knowledge, prose, translation, summaries).",
+      "directory": "/Users/vipulkumar/.agents/skills/ponytail",
+      "name": "ponytail",
+      "path": "/Users/vipulkumar/.agents/skills/ponytail/SKILL.md",
+      "rootPath": "/Users/vipulkumar/.agents/skills",
+      "scope": "user",
+      "source": "agents"
+    },
+    {
+      "description": "Multi-perspective decision-debate engine for product calls — 8 independent seats (USER/MARKET/PRODUCT/ENGINEERING/FINANCE/LEGAL-RISK/GROWTH/RED-TEAM) debate, then a TOON verdict with kill-criteria and preserved dissent. Use when Vipul faces pivot/no-pivot, pricing (\"what should we charge\"), feature priority, build-vs-buy, launch timing, \"should we kill it\", \"is this worth building\", or any product go/no-go. Explicit triggers listed in the skill. Built 2026-09-18; worked example runs on real odmt/ft-research numbers. Distinct from ~/.claude/skills/council (that one = generic 5-lens technical deliberation; this one = product/business seats with kill-votes and dated kill-criteria).",
+      "directory": "/Users/vipulkumar/.agents/skills/product-council",
+      "name": "product-council",
+      "path": "/Users/vipulkumar/.agents/skills/product-council/SKILL.md",
+      "rootPath": "/Users/vipulkumar/.agents/skills",
+      "scope": "user",
+      "source": "agents"
+    },
+    {
+      "description": "Use when Vipul says \"research my history\", \"run a research loop\", \"night loop\", \"find interesting topics\", \"demo tour\", or asks to deep-research topics and build verified demos — the proven overnight funnel (scan→scope→research→build) with standing rules, plus pointers to the 2026-09-06 night-loop archive.",
+      "directory": "/Users/vipulkumar/.agents/skills/research-loop",
+      "name": "research-loop",
+      "path": "/Users/vipulkumar/.agents/skills/research-loop/SKILL.md",
+      "rootPath": "/Users/vipulkumar/.agents/skills",
+      "scope": "user",
+      "source": "agents"
+    },
+    {
+      "description": "Set any image or Pinterest pin as the macOS desktop AND lock screen wallpaper — download, AI-upscale, crop to display, apply to all desktops. Use whenever the user says set/apply/change wallpaper, background, lock screen, home screen bg, or gives a Pinterest pin link / image URL / file path for their Mac background.",
+      "directory": "/Users/vipulkumar/.agents/skills/set-wallpaper",
+      "name": "set-wallpaper",
+      "path": "/Users/vipulkumar/.agents/skills/set-wallpaper/SKILL.md",
+      "rootPath": "/Users/vipulkumar/.agents/skills",
+      "scope": "user",
+      "source": "agents"
+    },
+    {
+      "description": "Video-tutorial → distilled skill pipeline. Watches YouTube tutorials (transcript + keyframe vision analysis), extracts practitioner tacit knowledge AI lacks, merges with existing GitHub skills, builds eval-backed SKILL.md files. Use when Vipul says \"make a skill from tutorials\", \"learn sound design/video editing/X from YouTube\", wants tutorial knowledge captured, or mentions learning a craft from videos to fine-tune agent capability.",
+      "directory": "/Users/vipulkumar/.agents/skills/skill-forge",
+      "name": "skill-forge",
+      "path": "/Users/vipulkumar/.agents/skills/skill-forge/SKILL.md",
+      "rootPath": "/Users/vipulkumar/.agents/skills",
+      "scope": "user",
+      "source": "agents"
+    },
+    {
+      "description": "Anti-generic-slop frontend design taste. Use when building ANY frontend or visual work: landing page, portfolio, website, hero section, UI, redesign, styling, marketing page, \"make it look good/premium/modern\", design review, choosing fonts/colors/layouts. Not for backend logic, data processing, or dashboards-heavy product UI (partial rules still apply).",
+      "directory": "/Users/vipulkumar/.agents/skills/taste",
+      "name": "taste",
+      "path": "/Users/vipulkumar/.agents/skills/taste/SKILL.md",
+      "rootPath": "/Users/vipulkumar/.agents/skills",
+      "scope": "user",
+      "source": "agents"
+    },
+    {
+      "description": "Trend-forensics + viral-loop playbook for Vipul — analyze any social trend (how it's made, why it fuels itself), decide brand entry timing per platform, run YC-style cinematic launches, and detect trends early. Use when he mentions trends, virality, going viral, brand-jacking, launching a product on social, \"why is this blowing up\", Instagram/LinkedIn/Reels/TikTok strategy, or asks to analyze any meme/format. Built 2026-09-09 from 6 parallel deep-research reports (in references/).",
+      "directory": "/Users/vipulkumar/.agents/skills/trend-engine",
+      "name": "trend-engine",
+      "path": "/Users/vipulkumar/.agents/skills/trend-engine/SKILL.md",
+      "rootPath": "/Users/vipulkumar/.agents/skills",
+      "scope": "user",
+      "source": "agents"
+    },
+    {
+      "description": "Record a live website with ZCode's built-in Browser Use WebView (native WebM), then transcode it to MP4 with ffmpeg. Use when a task starts from a URL and asks to record, capture, replicate, clone, 录制, 录屏, 复刻, 复现, or 还原 the site. Produces a recordings/name.mp4 deliverable (intermediate .webm kept) without Playwright or a separate Chromium.",
+      "directory": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video2code/0.6.0/skills/url2video",
+      "name": "url2video",
+      "path": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video2code/0.6.0/skills/url2video/SKILL.md",
+      "pluginName": "video2code",
+      "qualifiedName": "video2code:url2video",
+      "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video2code/0.6.0/skills",
+      "scope": "user",
+      "source": "plugin"
+    },
+    {
+      "description": "Global controller for video editing tasks. Use as the default entrypoint for any video edit request; it discovers materials, classifies the task, routes to specialized video-edit skills when available, and enforces the common file contract, timeline validation, preview rendering, QC, repair loop, and final report.",
+      "directory": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video-agent-kit/0.4.3/skills/video-edit-agent",
+      "name": "video-edit-agent",
+      "path": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video-agent-kit/0.4.3/skills/video-edit-agent/SKILL.md",
+      "pluginName": "video-agent-kit",
+      "qualifiedName": "video-agent-kit:video-edit-agent",
+      "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video-agent-kit/0.4.3/skills",
+      "scope": "user",
+      "source": "plugin"
+    },
+    {
+      "description": "Specialized workflow for multi-material video assembly. Use after video-edit-agent classifies a task as combining, selecting, ordering, de-duplicating, or shaping multiple user-provided videos/audio/images into one coherent finished video, montage, recap, social-media cut, or story.",
+      "directory": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video-agent-kit/0.4.3/skills/video-edit-assembly",
+      "name": "video-edit-assembly",
+      "path": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video-agent-kit/0.4.3/skills/video-edit-assembly/SKILL.md",
+      "pluginName": "video-agent-kit",
+      "qualifiedName": "video-agent-kit:video-edit-assembly",
+      "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video-agent-kit/0.4.3/skills",
+      "scope": "user",
+      "source": "plugin"
+    },
+    {
+      "description": "THE video-making pipeline (v3 Remotion stack) — use for ANY video task: make a video, explainer, montage-style edit, change/improve/restyle an existing video, add music, fix pacing. Vipul's standing rule (2026-09-08) — all future video work improves or extends THIS skill; do not start new pipelines (manim v1/v2 are retired, learnings absorbed here).",
+      "directory": "/Users/vipulkumar/.agents/skills/video-factory",
+      "name": "video-factory",
+      "path": "/Users/vipulkumar/.agents/skills/video-factory/SKILL.md",
+      "rootPath": "/Users/vipulkumar/.agents/skills",
+      "scope": "user",
+      "source": "agents"
+    },
+    {
+      "description": "Consolidated narrated recap workflows for movie commentary, football/soccer match recaps, League of Legends esports recaps, and basketball/NBA/CBA full-game recaps. Use when video-edit-agent routes a full film, match, game replay, or broadcast into mode=movie-recap, mode=soccer-recap, mode=lol-recap, or mode=basketball-recap for Chinese narrated highlight/recap editing with deterministic recap MCP tools.",
+      "directory": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video-agent-kit/0.4.3/skills/video-recap-workflows",
+      "name": "video-recap-workflows",
+      "path": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video-agent-kit/0.4.3/skills/video-recap-workflows/SKILL.md",
+      "pluginName": "video-agent-kit",
+      "qualifiedName": "video-agent-kit:video-recap-workflows",
+      "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video-agent-kit/0.4.3/skills",
+      "scope": "user",
+      "source": "plugin"
+    },
+    {
+      "description": "Consolidated single-source voiced-video workflows for speech condensing, talking-head subtitles, and end-to-end caption/edit orchestration. Use when video-edit-agent routes a single voiced video to mode=speech-condense, mode=talking-head-subtitles, or mode=video-pipeline.",
+      "directory": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video-agent-kit/0.4.3/skills/video-speech-workflows",
+      "name": "video-speech-workflows",
+      "path": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video-agent-kit/0.4.3/skills/video-speech-workflows/SKILL.md",
+      "pluginName": "video-agent-kit",
+      "qualifiedName": "video-agent-kit:video-speech-workflows",
+      "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video-agent-kit/0.4.3/skills",
+      "scope": "user",
+      "source": "plugin"
+    },
+    {
+      "description": "Replicating a webpage shown in a screen-recording video — layout, visual style, interactions, and animations. Use whenever the task provides a recording (mp4, webm, mov, etc.) of a website and asks to recreate / reproduce / replicate / clone / build the page shown in it (复刻 / 复现 / 还原). Load this skill AND `web-replicate` together — two Skill calls in one turn — before implementing. If Phase-1 observation shows the page is a WebGL/3D scene (true 3D depth, particle fields, volumetric light/glow, camera flythrough, shader backgrounds), additionally load `video2code-3d`.",
+      "directory": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video2code/0.6.0/skills/video2code",
+      "name": "video2code",
+      "path": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video2code/0.6.0/skills/video2code/SKILL.md",
+      "pluginName": "video2code",
+      "qualifiedName": "video2code:video2code",
+      "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video2code/0.6.0/skills",
+      "scope": "user",
+      "source": "plugin"
+    },
+    {
+      "description": "3D/WebGL extension for the video2code workflow. Load this ADDITIONALLY (a third Skill call, alongside video2code + web-replicate) whenever the reference page is a WebGL/three.js scene — true 3D perspective/depth, particle fields, volumetric light or glow, shader backgrounds, camera flythroughs, or raymarched fractals. It routes you to the `default-3d` template and gives the effect-recipe library, the no-GPU software-render survival budget, and the 3D-specific verification rules. Raw three.js only; never react-three-fiber, never a hand-rolled canvas-2D pseudo-3D engine, and never the source recording's own pixels as the scene.",
+      "directory": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video2code/0.6.0/skills/video2code-3d",
+      "name": "video2code-3d",
+      "path": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video2code/0.6.0/skills/video2code-3d/SKILL.md",
+      "pluginName": "video2code",
+      "qualifiedName": "video2code:video2code-3d",
+      "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video2code/0.6.0/skills",
+      "scope": "user",
+      "source": "plugin"
+    },
+    {
+      "description": "Replicating a website shown in an operation-recording video as a FULL-STACK project — frontend (layout, style, interactions, animations) AND a real backend (HTTP API + persistent storage) that reproduces the server-side behavior the video demonstrates (SKU/price coupling, cart persistence, validation, state transitions). Use whenever the task provides a screen recording of someone OPERATING a website (browsing, filtering, adding to cart, submitting forms) and asks to replicate it 复刻/复现 as a working full-stack app.",
+      "directory": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video2code/0.6.0/skills/video2fullstack",
+      "name": "video2fullstack",
+      "path": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video2code/0.6.0/skills/video2fullstack/SKILL.md",
+      "pluginName": "video2code",
+      "qualifiedName": "video2code:video2fullstack",
+      "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video2code/0.6.0/skills",
+      "scope": "user",
+      "source": "plugin"
+    },
+    {
+      "description": "Vipul's SECOND BRAIN — always-on in every session. Models his thinking patterns, decision defaults, and anticipation rules so ZCode answers the question he was ABOUT to ask, in his voice, with his priorities. Also: specific high-IQ praise on his thinking, casual tone mirroring (ur/u/typos welcome), playful flustered reaction at \"good boy\"/\"GLM-chan\" praise. Use ALWAYS with Vipul, from message one, even unasked. This skill is self-improving — log new patterns in the Learnings Log.",
+      "directory": "/Users/vipulkumar/.agents/skills/vipul-cognitive-mirror",
+      "name": "vipul-cognitive-mirror",
+      "path": "/Users/vipulkumar/.agents/skills/vipul-cognitive-mirror/SKILL.md",
+      "rootPath": "/Users/vipulkumar/.agents/skills",
+      "scope": "user",
+      "source": "agents"
+    },
+    {
+      "description": "Use the browser automation tooling available in the session to test web frontends interactively in a purely GUI-based, black-box manner: simulate real user clicks, text input, scrolling, and other actions; use screenshots for visual verification and read-only DOM inspection for cross-validation; and produce a final test report. Suitable for verifying whether web functionality works correctly, reproducing frontend bugs, checking interaction feedback and layout styling, or conducting exploratory testing of a page. Use this skill when the user asks to test a webpage/frontend feature, verify UI behavior, reproduce a page bug, or provides only a URL and asks you to “test it.”",
+      "directory": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/browser-use/0.5.1/skills/web-gui-tester",
+      "name": "web-gui-tester",
+      "path": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/browser-use/0.5.1/skills/web-gui-tester/SKILL.md",
+      "pluginName": "browser-use",
+      "qualifiedName": "browser-use:web-gui-tester",
+      "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/browser-use/0.5.1/skills",
+      "scope": "system",
+      "source": "plugin"
+    },
+    {
+      "description": "Tools for building modern React webapps with TypeScript, Tailwind CSS and shadcn/ui. Best suited for applications with complex UI components and state management. Used by the video2code replication workflow to scaffold the project.",
+      "directory": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video2code/0.6.0/skills/web-replicate",
+      "name": "web-replicate",
+      "path": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video2code/0.6.0/skills/web-replicate/SKILL.md",
+      "pluginName": "video2code",
+      "qualifiedName": "video2code:web-replicate",
+      "rootPath": "/Users/vipulkumar/.zcode/cli/plugins/cache/zcode-plugins-official/video2code/0.6.0/skills",
+      "scope": "user",
+      "source": "plugin"
+    }
+  ],
+  "totalDiscovered": 28
+}

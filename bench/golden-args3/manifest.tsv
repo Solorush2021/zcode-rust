@@ -1,0 +1,13 @@
+scase001	__internal-search	check
+scase002	__internal-searchbogus	check
+scase003	__internal-searchgrep--version	check
+scase004	__internal-searchfind.-maxdepth1-namehelp.ts	check
+scase005	__internal-searchgrep-cparseArgsarguments.ts	check
+scase006	__internal-searchgrep-nparseArgsarguments.ts	check
+scase007	__internal-searchgrep-rlnrunDoctor--include=*.ts.	check
+scase008	__internal-searchgrep-Z-nparseArgsarguments.ts	check
+scase009	__internal-searchgrep--null-nparseArgsarguments.ts	check
+scase010	__internal-searchgrep-rlnzzz-no-such-token-zzz--include=*.ts.	check
+scase011	__internal-searchgrep-n--configxparseArgsarguments.ts	check
+scase012	__internal-searchfind.-namenosuchfile.xyz	check
+scase013	__internal-searchgrep	check
